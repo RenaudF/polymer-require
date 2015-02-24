@@ -1,0 +1,15 @@
+<link rel="import" href="/libs/core-signals/core-signals.html">
+
+<polymer-element name="my-app" on-java-listeners-ready="{{init}}">
+	<template>
+		<span>APP READY</span>
+		<core-signals></core-signals>
+	</template>
+	<script>
+	(function(){
+		Polymer('my-app', {
+			ready: function(){ console.log('app ready'); }
+		});
+	})();
+	</script>
+</polymer-element>

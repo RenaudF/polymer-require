@@ -1,0 +1,15 @@
+{
+  "name": "polymer-requirejs",
+  "version": "0.0.0",
+  "authors": [
+    "Renaud Fontana <sirgzu@hotmail.com>"
+  ],
+  "private": true,
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "polymer": "~0.5.2",
+    "core-signals": "Polymer/core-signals#~0.5.2",
+    "d3": "~3.3.13",
+    "q": "1.0.1"
+  }
+}
