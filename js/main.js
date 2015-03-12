@@ -16,6 +16,8 @@ require.config({
 });
 
 require(['libs/d3/d3', 'libs/q/q'], function(d3, Q){
+	var polymerReady = Q.defer();
+
 	var request = d3.html('libs/polymer/polymer.html', function(d){
 
 		var links = d.querySelectorAll('link');
@@ -40,7 +42,14 @@ require(['libs/d3/d3', 'libs/q/q'], function(d3, Q){
 
 		Q.all(linksDeferred.concat(scriptsDeferred)).done(function(){
 			console.log('Polymer is fully loaded');
-		})
+			polymerReady.resolve();
+		});
 		document.head.appendChild(d);
+	});
+
+	Q.when(polymerReady.promise).done(function(){
+		Polymer.import(['elements/my-app.html'], function(){
+			debugger;
+		});
 	});
 });
