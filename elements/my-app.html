@@ -6,10 +6,10 @@
 		<core-signals></core-signals>
 	</template>
 	<script>
-	(function(){
-		Polymer('my-app', {
-			ready: function(){ console.log('app ready'); }
+		require([], function(){
+			Polymer('my-app', {
+				ready: function(){ console.log('app ready'); }
+			});
 		});
-	})();
 	</script>
 </polymer-element>
