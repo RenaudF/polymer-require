@@ -1,3 +1,4 @@
+console.log('data-main config')
 require.config({
 	baseUrl: 'js',
 	paths: {
@@ -36,4 +37,5 @@ require(['libs/q/q'], function(Q){
 	link.onload = polymerLoaded.resolve;
 	var head = document.querySelector('head');
 	head.appendChild(link);
+	console.log('data-main init')
 });
