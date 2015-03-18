@@ -4,10 +4,6 @@ require.config({
 		"libs": "../libs"
 	},
 	shim: {
-		'libs/d3/d3': {
-			deps: [],
-			exports: 'd3'
-		},
 		'libs/q/q': {
 			deps: [],
 			exports: 'Q'
