@@ -1,11 +1,11 @@
-<script async id="require" src="libs/requirejs/require.js"></script>
-<script async id="polymer" src="libs/polymer/polymer.js"></script>
+<link async rel="import" href="libs/polymer/polymer.html">
+<script async src="libs/requirejs/require.js"></script>
 <script>
 	Promise.all([
 		new Promise(function(resolve, reject) {
-			document.currentScript.ownerDocument.querySelector('#require').onload = resolve;
+			document.currentScript.ownerDocument.querySelector('script[async]').onload = resolve;
 		}).then(function(){
-			console.log('1/2) require loaded');
+			console.log('1) require loaded');
 			require.config({
 				baseUrl: 'js',
 				paths: {
@@ -14,9 +14,9 @@
 			});
 		}),
 		new Promise(function(resolve, reject) {
-			document.currentScript.ownerDocument.querySelector('#polymer').onload = resolve;
+			document.currentScript.ownerDocument.querySelector('link[async]').onload = resolve;
 		}).then(function(){
-			console.log('1/2) polymer loaded');
+			console.log('2) polymer loaded');
 		}),
 	]).then(function(){
 		Polymer.import(['elements/my-app.html']);
